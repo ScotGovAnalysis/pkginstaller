@@ -10,7 +10,7 @@
 #' get_server_path()
 #' }
 get_server_path <- function() {
-  server_fp <- system.file("packages_server_path.txt",
+  server_fp <- system.file("serverconf/packages_server_path.txt",
                            package = "pkginstaller",
                            mustWork = TRUE
   )
