@@ -27,7 +27,7 @@ devtools::install_github("DataScienceScotland/pkginstaller")
 A pre-requisite is to have the PACKAGES index files, created with:
 
 ``` r
-tools::write_PACKAGES("packages_dir", type="win.binary")
+tools::write_PACKAGES("packages_dir", type = "win.binary")
 ```
 
 The index files allow a package to be installed and its dependent
@@ -39,7 +39,7 @@ This makes use of the `contriburl` argument of `install.packages` to
 specify the server directory. For example:
 
 ``` r
-install.packages("tidyr", repos=NULL, contriburl="file://internal_server/r422_packages")
+install.packages("tidyr", repos = NULL, contriburl = "file://internal_server/r422_packages")
 ```
 
 ## Using the add-in
