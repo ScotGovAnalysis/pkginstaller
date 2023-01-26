@@ -5,7 +5,8 @@
 #' inside the package install) for all subsequent uses of the
 #' package_installer() function.
 #'
-#' @param server_path
+#' @param server_path char specifying server path to use
+#' (in UNC format e.g //my_server/my_directory)
 #'
 #' @export
 #'
