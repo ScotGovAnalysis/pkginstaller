@@ -1,0 +1,4 @@
+Name: SCOTS install package
+Description: Installs specified package if available on SCOTS server.
+Binding: package_installer
+Interactive: true
