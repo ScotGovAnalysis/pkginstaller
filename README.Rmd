@@ -1,0 +1,81 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# pkginstaller
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+An R Studio Add-in to make it easier to install packages from an internal server.
+
+For locked down IT environments where cannot install packages from CRAN directly, but where packages are stored on an internal server. 
+
+
+## Installation
+
+You can install the development version of pkginstaller from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("DataScienceScotland/pkginstaller")
+```
+
+## Pre-requisite packages directory
+
+A pre-requisite is to have the PACKAGES index files, created with:
+```{r eval=FALSE}
+tools::write_PACKAGES("packages_dir", type="win.binary")
+```
+The index files allow a package to be installed and its dependent packages to be installed automatically.
+
+## Package installation prcoess
+
+This makes use of the `contriburl` argument of `install.packages` to specify the server directory. For example:
+
+```{r eval=FALSE}
+install.packages("tidyr", repos=NULL, contriburl="file://internal_server/r422_packages")
+```
+
+## Using the add-in
+
+Once the package is installed, use the pkginstaller Addins found in R Studio  
+
+![image-1](man/figures/Addin_img.png)
+
+
+## Installing a package with the add-in
+
+Select "Internal install package" from the pkginstaller Addin menu. A pop-up will open where should specify the name of the package to install.  
+
+![image-2](man/figures/Install_img.png)  
+
+
+## Checking the current packages server directory
+Select "Show packages directory" from the pkginstaller Addin menu. In the R console the current directory should be printed.
+
+
+## Updating the current packages server directory
+If the current check shows the directory needs changing, then run "Update packages directory" from the Addin menu. A pop-up will open and should specify the path to the directory.  
+
+![image-3](man/figures/Server_img.png)  
+
+
+When specifying the server directory, please note:
+
+1. Should use a UNC path in the form `//server/folder_name`, not a mapped drive letter.
+
+2. Use forward slashes not back slashes in the directory as would be used in R code.
+
+3. It is not necessary to specify `file:` at the start of the directory as this will be added automatically.
