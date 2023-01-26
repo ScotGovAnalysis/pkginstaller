@@ -2,12 +2,13 @@
 % Please edit documentation in R/update_server_path.R
 \name{update_server_path}
 \alias{update_server_path}
-\title{Set server path containing packages to install.}
+\title{Set internal server path containing packages to install.}
 \usage{
 update_server_path(server_path)
 }
 \arguments{
-\item{server_path}{}
+\item{server_path}{string specifying new server path containing packages
+(UNC format path e.g. //my_internal_server/my_directory)}
 }
 \description{
 This is only needed if get_server_path() shows current path needs changing.
