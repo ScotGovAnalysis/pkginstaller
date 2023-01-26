@@ -4,11 +4,7 @@
 \alias{update_server_path}
 \title{Set server path containing packages to install.}
 \usage{
-update_server_path(server_path)
-}
-\arguments{
-\item{server_path}{char specifying server path to use
-(in UNC format e.g //my_server/my_directory)}
+update_server_path()
 }
 \description{
 This is only needed if get_server_path() shows current path needs changing.
@@ -18,6 +14,6 @@ package_installer() function.
 }
 \examples{
 \dontrun{
-update_server_path("//my_server/all_R/R_4_2_2")
+update_server_path()
 }
 }
