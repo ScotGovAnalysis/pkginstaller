@@ -42,7 +42,7 @@ This makes use of the `contriburl` argument of `install.packages` to
 specify the server directory. For example:
 
 ``` r
-install.packages("tidyr", repos = NULL, contriburl = "file://internal_server/r422_packages")
+install.packages("tidyr", repos = NULL, type="win.binary", contriburl = "file://internal_server/r422_packages")
 ```
 
 ## Using the add-in
