@@ -5,16 +5,15 @@
 #' inside the package install) for all subsequent uses of the
 #' package_installer() function.
 #'
-#' @param server_path char specifying server path to use
-#' (in UNC format e.g //my_server/my_directory)
 #'
 #' @export
 #'
 #' @examples
 #' \dontrun{
-#' update_server_path("//my_server/all_R/R_4_2_2")
+#' update_server_path()
 #' }
-update_server_path <- function(server_path) {
+update_server_path <- function() {
+  server_path <- rstudioapi::showPrompt("server path", "Enter path to server")
   server_fp <- system.file("serverconf/packages_server_path.txt",
     package = "pkginstaller",
     mustWork = TRUE
