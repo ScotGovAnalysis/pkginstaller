@@ -3,4 +3,4 @@
 .RData
 .Ruserdata
 
-packages_server_path.txt
+serverconf/.
