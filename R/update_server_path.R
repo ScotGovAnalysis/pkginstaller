@@ -7,10 +7,13 @@
 #'
 #' @param server_path
 #'
-#' @return
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' update_server_path("//my_server/all_R/R_4_2_2")
+#' }
+#'
 update_server_path <- function(server_path){
   server_fp <- system.file("packages_server_path.txt",
                            package = "pkginstaller",
