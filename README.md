@@ -5,7 +5,8 @@
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/DataScienceScotland/pkginstaller/workflows/R-CMD-check/badge.svg)](https://github.com/DataScienceScotland/rpkgchecker/actions)
+[![R build
+status](https://github.com/DataScienceScotland/pkginstaller/workflows/R-CMD-check/badge.svg)](https://github.com/DataScienceScotland/pkginstaller/actions)
 <!-- badges: end -->
 
 An R Studio Add-in to make it easier to install packages from an
