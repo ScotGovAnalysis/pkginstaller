@@ -14,10 +14,10 @@
 #' \dontrun{
 #' update_server_path("//my_server/all_R/R_4_2_2")
 #' }
-update_server_path <- function(server_path){
+update_server_path <- function(server_path) {
   server_fp <- system.file("serverconf/packages_server_path.txt",
-                           package = "pkginstaller",
-                           mustWork = TRUE
+    package = "pkginstaller",
+    mustWork = TRUE
   )
   write(server_path, server_fp)
 }

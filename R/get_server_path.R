@@ -11,8 +11,8 @@
 #' }
 get_server_path <- function() {
   server_fp <- system.file("serverconf/packages_server_path.txt",
-                           package = "pkginstaller",
-                           mustWork = TRUE
+    package = "pkginstaller",
+    mustWork = TRUE
   )
 
   server_path <- readLines(server_fp)[[1]]
