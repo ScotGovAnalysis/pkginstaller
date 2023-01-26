@@ -62,14 +62,14 @@ install.
 
 ## Checking the current packages server directory
 
-Select “Show packages directory” from the pkginstaller Addin menu. In
-the R console the current directory should be printed.
+Select “Show packages directory” from the pkginstaller Addin menu. The
+current directory should be printed in the console.
 
 ## Updating the current packages server directory
 
 If the current check shows the directory needs changing, then run
 “Update packages directory” from the Addin menu. A pop-up will open and
-should specify the path to the directory.
+should specify the updated directory containing packages to install.
 
 ![image-3](man/figures/Server_img.png)
 
