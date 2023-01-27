@@ -27,7 +27,7 @@ If security settings prevent you installing this package from GitHub
 directly, download its [zip
 file](https://github.com/DataScienceScotland/pkginstaller/archive/refs/heads/main.zip)
 and use the code below to install (after replacing
-`<FILEPATH OF ZIPPED FILE>` with the directory of the downloaded zip),
+`<FILEPATH OF ZIPPED FILE>` with the directory of the downloaded zip):
 
 ``` r
 remotes::install_local(
