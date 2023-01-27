@@ -17,20 +17,32 @@ directly, but where packages are stored on an internal server.
 
 ## Installation
 
-You can install the development version of pkginstaller from
-[GitHub](https://github.com/) with:
+You can install pkginstaller from [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("DataScienceScotland/pkginstaller")
+remotes::install_github("DataScienceScotland/pkginstaller", upgrade="never")
 ```
 
-## Pre-requisite packages directory
-
-A pre-requisite is to have the PACKAGES index files, created with:
+If security settings prevent you installing this package from GitHub
+directly, download its [zip
+file](https://github.com/DataScienceScotland/pkginstaller/archive/refs/heads/main.zip)
+and use the code below to install (after replacing
+`<FILEPATH OF ZIPPED FILE>` with the directory of the downloaded zip),
 
 ``` r
-tools::write_PACKAGES("packages_dir", type = "win.binary")
+remotes::install_local(
+  "<FILEPATH OF ZIPPED FILE>/pkginstaller-main.zip",
+  upgrade = "never"
+)
+```
+
+## Packages directory
+
+It is recommended that the directory containing the packages has
+PACKAGES index files, created with:
+
+``` r
+tools::write_PACKAGES(dir = "packages_dir", type = "win.binary")
 ```
 
 The index files allow a package to be installed and its dependent
@@ -42,7 +54,7 @@ This makes use of the `contriburl` argument of `install.packages` to
 specify the server directory. For example:
 
 ``` r
-install.packages("tidyr", repos = NULL, type="win.binary", contriburl = "file://internal_server/r422_packages")
+install.packages("tidyr", repos = NULL, type = "win.binary", contriburl = "file://internal_server/r422_packages")
 ```
 
 ## Using the add-in
@@ -75,11 +87,8 @@ should specify the updated directory containing packages to install.
 
 When specifying the server directory, please note:
 
-1.  Should use a UNC path in the form `//server/folder_name`, not a
-    mapped drive letter.
-
-2.  Use forward slashes not back slashes in the directory as would be
+1.  Use forward slashes not back slashes in the directory as would be
     used in R code.
 
-3.  It is not necessary to specify `file:` at the start of the directory
+2.  It is not necessary to specify `file:` at the start of the directory
     as this will be added automatically.
