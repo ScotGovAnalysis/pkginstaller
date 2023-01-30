@@ -13,7 +13,10 @@
 #' update_server_path()
 #' }
 update_server_path <- function() {
-  server_path <- rstudioapi::showPrompt("server path", "Enter path to server")
+  server_path <- rstudioapi::showPrompt("server path",
+                                        "Enter path to packages directory",
+                                        default=get_server_path())
+
   server_fp <- system.file("serverconf/packages_server_path.txt",
     package = "pkginstaller",
     mustWork = TRUE
