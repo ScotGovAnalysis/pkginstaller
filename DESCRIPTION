@@ -3,10 +3,10 @@ Type: Package
 Title: Addin to Install Packages From Internal Server
 Version: 0.1.0
 Author: Tom Wilson
-Maintainer: thomas.wilson@gov.scot
+Maintainer: <thomas.wilson@gov.scot>
 Description: An easier way to install R packages when working in a locked down 
-environment and installing R packages from an internal server rather 
-than from the internet.
+    environment and installing R packages from an internal server rather 
+    than from the internet.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
