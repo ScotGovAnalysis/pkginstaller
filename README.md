@@ -77,8 +77,7 @@ When specifying the server directory, please note:
 This package installation process makes use of the `contriburl` argument
 of `install.packages`. `contriburl` is used to specify the server
 directory containing compiled Windows binary zip files for each R
-package. The command it uses is as follows, with the only configurable
-part currently being `contriburl`:
+package. The command it uses is like the following:
 
 ``` r
 install.packages("tidyr", repos = NULL, type = "win.binary", contriburl = "file://internal_server/r422_packages")
