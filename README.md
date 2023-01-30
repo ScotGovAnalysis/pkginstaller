@@ -36,27 +36,6 @@ remotes::install_local(
 )
 ```
 
-## Packages directory
-
-It is recommended that the directory containing the packages has
-PACKAGES index files, created with:
-
-``` r
-tools::write_PACKAGES(dir = "packages_dir", type = "win.binary")
-```
-
-The index files allow a package to be installed and its dependent
-packages to be installed automatically.
-
-## Package installation prcoess
-
-This makes use of the `contriburl` argument of `install.packages` to
-specify the server directory. For example:
-
-``` r
-install.packages("tidyr", repos = NULL, type = "win.binary", contriburl = "file://internal_server/r422_packages")
-```
-
 ## Using the add-in
 
 Once the package is installed, use the pkginstaller Addins found in R
@@ -92,3 +71,32 @@ When specifying the server directory, please note:
 
 2.  It is not necessary to specify `file:` at the start of the directory
     as this will be added automatically.
+
+## The underlying package installation command
+
+This package installation process makes use of the `contriburl` argument
+of `install.packages`. `contriburl` is used to specify the server
+directory containing compiled Windows binary zip files for each R
+package. The command it uses is as follows, with the only configurable
+part currently being `contriburl`:
+
+``` r
+install.packages("tidyr", repos = NULL, type = "win.binary", contriburl = "file://internal_server/r422_packages")
+```
+
+The `type` argument is currently hard coded as `"win.binary"`, therefore
+the server directory should contain Windows binaries, not source
+tarballs or macOS builds. The server directory also needs index files.
+See below.
+
+## Setting up the server directory
+
+A pre-requisite is the directory containing the packages has PACKAGES
+index files, created with:
+
+``` r
+tools::write_PACKAGES(dir = "packages_dir", type = "win.binary")
+```
+
+The index files allow a package to be installed and its dependent
+packages to be installed automatically.
