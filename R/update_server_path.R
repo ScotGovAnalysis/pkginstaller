@@ -13,16 +13,23 @@
 #' update_server_path()
 #' }
 update_server_path <- function() {
+  original_path <- get_server_path()
+
+  default_path <- substr(original_path, 6, nchar(get_server_path()))
+
   server_path <- rstudioapi::showPrompt("server path",
     "Enter path to packages directory",
-    default = get_server_path()
+    default = default_path
   )
-  if (nchar(server_path) == 0) {
-    server_path <- get_server_path()
+
+  if (is.null(server_path)) {
+    server_path <- original_path
   }
+
   server_fp <- system.file("serverconf/packages_server_path.txt",
     package = "pkginstaller",
     mustWork = TRUE
   )
+
   write(server_path, server_fp)
 }
