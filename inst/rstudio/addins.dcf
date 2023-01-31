@@ -1,14 +1,9 @@
-Name: Internal install package
+Name: Install package internal
 Description: Installs specified package if available on SCOTS server.
 Binding: package_installer
 Interactive: true
 
-Name: Show packages directory
-Description: Show the current directory from where packages installed.
-Binding: get_server_path
-Interactive: true
-
-Name: Update packages directory
+Name: Update server packages directory
 Description: Update the directory from where packages installed.
 Binding: update_server_path
 Interactive: true
