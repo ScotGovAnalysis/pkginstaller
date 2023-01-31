@@ -10,8 +10,14 @@
 #' package_installer()
 #' }
 package_installer <- function() {
-  pkg_name <- rstudioapi::showPrompt("Package Name", "Enter package name")
   pkgs_server <- get_server_path()
+  pkg_name <- rstudioapi::showPrompt(
+    "Enter Package Name",
+    paste(
+      "Package to install from",
+      substr(pkgs_server, 6, nchar(pkgs_server))
+    )
+  )
   utils::install.packages(pkg_name,
     repos = NULL,
     type = "win.binary",
