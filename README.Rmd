@@ -26,9 +26,9 @@ For locked down IT environments where cannot install packages from CRAN directly
 
 ## Installation
 
-You can install pkginstaller from [GitHub](https://github.com/) with:
+You can install pkginstaller from [GitHub](https://github.com/) using the [remotes](https://cran.r-project.org/web/packages/remotes/index.html) library:
 
-``` r
+```{r git-install, eval=FALSE}
 remotes::install_github("DataScienceScotland/pkginstaller", upgrade="never")
 ```
 
@@ -43,24 +43,19 @@ remotes::install_local(
 
 ## Using the add-in
 
-Once the package is installed, use the pkginstaller Addins found in R Studio  
+Once the package is installed, use pkginstaller from the Addins menu found in R Studio.  
 
 ![image-1](man/figures/Addin_img.png)
 
 
 ## Installing a package with the add-in
 
-Select "Internal install package" from the pkginstaller Addin menu. A pop-up will open where should specify the name of the package to install.  
+Select "Install package internal" from the pkginstaller Addin menu. A pop-up will open where should specify the name of the package to install. Check the directory shown is the correct location of the R packages. If it's not see next section. 
 
 ![image-2](man/figures/Install_img.png)  
 
-
-## Checking the current packages server directory
-Select "Show packages directory" from the pkginstaller Addin menu. The current directory should be printed in the console.
-
-
 ## Updating the current packages server directory
-If the current check shows the directory needs changing, then run "Update packages directory" from the Addin menu. A pop-up will open and should specify the updated directory containing packages to install.  
+If the packages directory needs changing, then run "Update server packages directory" from the Addin menu. A pop-up will open and should specify the updated directory containing packages to install.  
 
 ![image-3](man/figures/Server_img.png)  
 
@@ -76,7 +71,7 @@ When specifying the server directory, please note:
 This package installation process makes use of the `contriburl` argument of `install.packages`. `contriburl` is used to specify the server directory containing compiled Windows binary zip files for each R package. The command it uses is like the following:
 
 ```{r eval=FALSE}
-install.packages("tidyr", repos = NULL, type = "win.binary", contriburl = "file://internal_server/r422_packages")
+install.packages("tidyr", repos = NULL, type = "win.binary", contriburl = "file://internal_server/R_4_2_2_Packages")
 ```
 
 The `type` argument is currently hard coded as `"win.binary"`, therefore the server directory should contain Windows binaries, not source tarballs or macOS builds. The server directory also needs index files. See below.
