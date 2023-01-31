@@ -17,7 +17,10 @@ directly, but where packages are stored on an internal server.
 
 ## Installation
 
-You can install pkginstaller from [GitHub](https://github.com/) with:
+You can install pkginstaller from [GitHub](https://github.com/) using
+the
+[remotes](https://cran.r-project.org/web/packages/remotes/index.html)
+library:
 
 ``` r
 remotes::install_github("DataScienceScotland/pkginstaller", upgrade="never")
@@ -38,29 +41,25 @@ remotes::install_local(
 
 ## Using the add-in
 
-Once the package is installed, use the pkginstaller Addins found in R
-Studio
+Once the package is installed, use pkginstaller from the Addins menu
+found in R Studio.
 
 ![image-1](man/figures/Addin_img.png)
 
 ## Installing a package with the add-in
 
-Select “Internal install package” from the pkginstaller Addin menu. A
+Select “Install package internal” from the pkginstaller Addin menu. A
 pop-up will open where should specify the name of the package to
-install.
+install. Check the directory shown is the correct location of the R
+packages. If it’s not see next section.
 
 ![image-2](man/figures/Install_img.png)
 
-## Checking the current packages server directory
-
-Select “Show packages directory” from the pkginstaller Addin menu. The
-current directory should be printed in the console.
-
 ## Updating the current packages server directory
 
-If the current check shows the directory needs changing, then run
-“Update packages directory” from the Addin menu. A pop-up will open and
-should specify the updated directory containing packages to install.
+If the packages directory needs changing, then run “Update server
+packages directory” from the Addin menu. A pop-up will open and should
+specify the updated directory containing packages to install.
 
 ![image-3](man/figures/Server_img.png)
 
@@ -80,7 +79,7 @@ directory containing compiled Windows binary zip files for each R
 package. The command it uses is like the following:
 
 ``` r
-install.packages("tidyr", repos = NULL, type = "win.binary", contriburl = "file://internal_server/r422_packages")
+install.packages("tidyr", repos = NULL, type = "win.binary", contriburl = "file://internal_server/R_4_2_2_Packages")
 ```
 
 The `type` argument is currently hard coded as `"win.binary"`, therefore
