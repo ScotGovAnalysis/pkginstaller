@@ -28,7 +28,7 @@ For locked down IT environments where cannot install packages from CRAN directly
 
 You can install pkginstaller from [GitHub](https://github.com/) using the [remotes](https://cran.r-project.org/web/packages/remotes/index.html) library:
 
-``` r
+```{r git-install, eval=FALSE}
 remotes::install_github("DataScienceScotland/pkginstaller", upgrade="never")
 ```
 
