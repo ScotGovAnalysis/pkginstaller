@@ -14,7 +14,7 @@ package_installer <- function() {
   pkg_name <- rstudioapi::showPrompt(
     "Enter Package Name",
     paste(
-      "Package to install from",
+      "Install from",
       substr(pkgs_server, 6, nchar(pkgs_server))
     )
   )
