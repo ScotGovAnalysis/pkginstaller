@@ -29,7 +29,7 @@ package_installer <- function() {
   pkgs_server <- get_server_path()
 
   pkg_name <- rstudioapi::showPrompt(
-    "Enter Package Name(s)",
+    "Enter Package Name(s) - Separate by commas if multiple",
     paste(
       "Install from",
       substr(pkgs_server, 6, nchar(pkgs_server))
