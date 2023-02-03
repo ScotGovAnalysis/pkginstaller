@@ -50,8 +50,11 @@ found in R Studio.
 
 Select “Install package internal” from the pkginstaller Addin menu. A
 pop-up will open where should specify the name of the package to
-install. Check the directory shown is the correct location of the R
-packages. If it’s not see next section.
+install. If you wish to install multiple packages you can enter their
+names separated by commas.
+
+Check the directory shown is the correct location of the R packages. If
+it’s not correct see next section.
 
 ![image-2](man/figures/Install_img.png)
 
