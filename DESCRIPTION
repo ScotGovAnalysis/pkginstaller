@@ -1,7 +1,7 @@
 Package: pkginstaller
 Type: Package
 Title: Addin to Install Packages From Internal Server
-Version: 0.2.0
+Version: 0.3.0
 Author: Tom Wilson
 Maintainer: <thomas.wilson@gov.scot>
 Description: An easier way to install R packages when working in a locked down 
