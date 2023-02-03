@@ -8,7 +8,8 @@ package_installer()
 }
 \description{
 To be used in R Studio, optionally as an add-in. A pop-up window will ask
-to enter name of package wish to install.
+to enter name of package wish to install. If wish to enter more than one
+package separate the names with commas
 }
 \examples{
 \dontrun{
