@@ -23,7 +23,7 @@ the
 library:
 
 ``` r
-remotes::install_github("DataScienceScotland/pkginstaller", upgrade="never")
+remotes::install_github("DataScienceScotland/pkginstaller", upgrade = "never")
 ```
 
 If security settings prevent you installing this package from GitHub
