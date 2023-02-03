@@ -3,7 +3,7 @@ clean_pkg_str <- function(pkg_str) {
   pkg_str <- gsub(" ", "", pkg_str)
 
   # Fail if anything not character, number, comma, dot
-  if (grepl("[^0-9a-z,\.]", pkg_str, ignore.case = TRUE)) {
+  if (grepl("[^0-9a-z,\\.]", pkg_str, ignore.case = TRUE)) {
     stop("Error in package names entered (char, number, commas, dot only)")
   }
 
