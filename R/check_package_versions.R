@@ -14,27 +14,17 @@ check_package_versions <- function() {
 
   # List all zip files in the directory
   search_dir <- sub("file:", "", pkgs_server)
-  zip_files <- list.files(search_dir, pattern = "\\.zip$", full.names = TRUE)
+  zip_files <- list.files(search_dir, pattern = "\\.zip$", full.names = FALSE)
 
   if (length(zip_files) == 0) {
     stop("No packages found. Check server packages directory")
   }
 
-  packages <-
-    lapply(zip_files, function(x) {
-      strsplit(basename(x), "_")[[1]]
-    })
+  package_name <- sub("_.*", "", zip_files)
 
-  # Extract package name as first value
-  package_name <- sapply(packages, function(x) {
-    x[1]
-  })
+  server_v <- sub("^.*?_", "", zip_files)
 
-  # Extract version converted to string 1.2.3 format
-  server_v <- sapply(packages, function(x) {
-    as.character(package_version(sub("\\.zip$", "", x[2])))
-  })
-
+  server_v <- sub("\\.zip", "", server_v)
 
   df_all <- data.frame(package_name, server_v)
 
