@@ -26,6 +26,8 @@ check_package_versions <- function() {
 
   server_v <- sub("\\.zip", "", server_v)
 
+  server_v <- sub("-", "\\.", server_v)
+
   df_all <- data.frame(package_name, server_v)
 
   # Add installed version to new column in same format
