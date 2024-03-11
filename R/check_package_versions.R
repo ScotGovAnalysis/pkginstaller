@@ -1,3 +1,14 @@
+#' Check package versions between server collection and those installed
+#'
+#' Where applicable gives the option to upgrade installed packages from server
+#' and to downgrade and install the server version where currently exceeded.
+#'
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' check_package_versions()
+#' }
 check_package_versions <- function() {
   pkgs_server <- get_server_path()
 
@@ -32,7 +43,7 @@ check_package_versions <- function() {
     # tryCatch as packages on server might not be installed
     tryCatch(
       {
-        version <- as.character(packageVersion(x))
+        version <- as.character(utils::packageVersion(x))
       },
       error = function(e) {
         NA
@@ -87,7 +98,7 @@ check_package_versions <- function() {
     user_response <- tolower(readline(prompt = q))
     if (user_response %in% c("y", "yes")) {
       cat("Downgrading ", nrow(df_downgrade), " packages...")
-      remove.packages(df_downgrade$package_name)
+      utils::remove.packages(df_downgrade$package_name)
       utils::install.packages(df_downgrade$package_name,
         repos = NULL,
         type = "win.binary",
