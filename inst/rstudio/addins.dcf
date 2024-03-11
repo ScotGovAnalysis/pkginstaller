@@ -7,3 +7,8 @@ Name: Update server packages directory
 Description: Update the directory from where packages installed.
 Binding: update_server_path
 Interactive: true
+
+Name: Check package versions
+Description: Check each package on the server matches the installed version. If not, offer to upgrade or downgrade as appropriate.
+Binding: check_package_versions
+Interactive: true
