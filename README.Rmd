@@ -67,6 +67,14 @@ When specifying the server directory, please note:
 
 2. It is not necessary to specify `file:` at the start of the directory as this will be added automatically.
 
+## Checking installed package versions match the server versions
+A check is available in the Addin menu "Check package versions". This extracts the name and version of each package currently available on the server and compares it with the locally installed version of that package. 
+
+If there are locally installed packages at a version lower than the versions available on the server, then this offers the chance to upgrade those packages if say yes to the prompt.
+
+Similarly, if there are locally installed versions of packages greater than the version on the server, then it offers the chance to downgrade them, ensuring you are using the version on the server.
+
+If you wish to use different server directory for this check, change this first using the "Update server packages directory" option available in the Addin. 
 
 ## The underlying package installation command
 
