@@ -58,7 +58,7 @@ check_package_versions <- function() {
     (df_all$server_v != df_all$installed_version), ]
 
   if (nrow(df_all) == 0) {
-    message("All installed packages match server version")
+    Cat("All installed packages match server version")
   }
 
   # If packages which could be upgraded give the option
