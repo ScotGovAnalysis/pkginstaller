@@ -39,7 +39,7 @@ check_package_versions <- function() {
   df_all <- data.frame(package_name, server_v)
 
   # Add installed version to new column in same format
-  cat("Getting version of each installed package...")
+  cat("Getting version of each installed package...\n")
   df_all$installed_version <- sapply(df_all$package_name, function(x) {
     # tryCatch as packages on server might not be installed
     tryCatch(
@@ -76,14 +76,14 @@ check_package_versions <- function() {
         "Do you want to upgrade them now? (y/n)"
     ))
     if (user_response %in% c("y", "yes")) {
-      cat("Upgrading ", nrow(df_upgrade), " packages...")
+      cat("Upgrading ", nrow(df_upgrade), " packages...\n")
       utils::install.packages(df_upgrade$package_name,
         repos = NULL,
         type = "win.binary",
         contriburl = pkgs_server
       )
     } else {
-      cat("Not proceeding with package upgrades.")
+      cat("Not proceeding with package upgrades.\n")
     }
   }
 
@@ -99,7 +99,7 @@ check_package_versions <- function() {
     q <- "Do you want to uninstall them and install their server version? (y/n)"
     user_response <- tolower(readline(prompt = q))
     if (user_response %in% c("y", "yes")) {
-      cat("Downgrading ", nrow(df_downgrade), " packages...")
+      cat("Downgrading ", nrow(df_downgrade), " packages...\n")
       utils::remove.packages(df_downgrade$package_name)
       utils::install.packages(df_downgrade$package_name,
         repos = NULL,
