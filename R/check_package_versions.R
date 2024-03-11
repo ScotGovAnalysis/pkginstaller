@@ -39,6 +39,7 @@ check_package_versions <- function() {
   df_all <- data.frame(package_name, server_v)
 
   # Add installed version to new column in same format
+  cat("Getting version of each installed package...")
   df_all$installed_version <- sapply(df_all$package_name, function(x) {
     # tryCatch as packages on server might not be installed
     tryCatch(
@@ -92,7 +93,8 @@ check_package_versions <- function() {
     numeric_version(df_all$installed_version), ]
 
   if (nrow(df_downgrade) > 0) {
-    cat("These", nrow(df_downgrade), "packages exceed the version on the server:")
+    cat("These", nrow(df_downgrade),
+        "packages exceed the version on the server:\n")
     cat(df_downgrade$package_name, sep = "\n")
     q <- "Do you want to uninstall them and install their server version? (y/n)"
     user_response <- tolower(readline(prompt = q))
